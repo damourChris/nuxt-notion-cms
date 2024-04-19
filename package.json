@@ -12,6 +12,9 @@
       "require": "./dist/module.cjs"
     }
   },
+  "engines": {
+    "node": ">=20.8.1"
+  },
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
   "files": [
