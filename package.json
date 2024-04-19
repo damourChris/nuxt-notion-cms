@@ -18,16 +18,16 @@
     "dist"
   ],
   "scripts": {
-    "prepack": "nuxt-module-build build",
+    "commitlint": "commitlint --edit",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
     "lint": "eslint .",
-    "test": "vitest run",
-    "test:watch": "vitest watch",
+    "prepack": "nuxt-module-build build",
     "prepare": "husky",
-    "commitlint": "commitlint --edit"
+    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
   },
   "dependencies": {
     "@nuxt/kit": "^3.11.2"
@@ -46,5 +46,6 @@
     "husky": "^9.0.11",
     "nuxt": "^3.11.2",
     "vitest": "^1.4.0"
-  }
+  },
+  "packageManager": "pnpm@9.0.4+sha256.caa915eaae9d9aefccf50ee8aeda25a2f8684d8f9d5c6e367eaf176d97c1f89e"
 }
