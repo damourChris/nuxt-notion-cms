@@ -1,8 +1,8 @@
 {
-  "name": "nuxt-notion",
+  "name": "nuxt-notion-cms",
   "version": "1.0.0",
-  "description": "Connect you Nuxt.js app with Notion as a CMS",
-  "repository": "your-org/nuxt-notion",
+  "description": "Connect you Nuxt.js app with Notion as a CMS.",
+  "repository": "damourChris/nuxt-notion-cms",
   "license": "MIT",
   "type": "module",
   "exports": {

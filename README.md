@@ -1,4 +1,4 @@
-# Nuxt Notion
+# Nuxt Notion CMS
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -8,7 +8,7 @@
 Connect you Nuxt.js app with Notion as a CMS.
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
-<!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/nuxt-notion?file=playground%2Fapp.vue) -->
+- [🏀 Online playground](https://stackblitz.com/github/damourChris/nuxt-notion-cms?file=playground%2Fapp.vue)
 <!-- - [📖 &nbsp;Documentation](https://example.com) -->
 
 ## Features
@@ -23,10 +23,10 @@ Connect you Nuxt.js app with Notion as a CMS.
 Install the module to your Nuxt application with one command:
 
 ```bash
-npx nuxi module add nuxt-notion
+npx nuxi module add nuxt-notion-cms
 ```
 
-That's it! You can now use Nuxt Notion in your Nuxt app ✨
+That's it! You can now use Nuxt Notion as your CMS in your Nuxt app ✨
 
 
 ## Contribution
@@ -62,14 +62,14 @@ That's it! You can now use Nuxt Notion in your Nuxt app ✨
 
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/nuxt-notion/latest.svg?style=flat&colorA=020420&colorB=00DC82
-[npm-version-href]: https://npmjs.com/package/nuxt-notion
+[npm-version-src]: https://img.shields.io/npm/v/nuxt-notion-cms/latest.svg?style=flat&colorA=020420&colorB=00DC82
+[npm-version-href]: https://npmjs.com/package/nuxt-notion-cms
 
-[npm-downloads-src]: https://img.shields.io/npm/dm/nuxt-notion.svg?style=flat&colorA=020420&colorB=00DC82
-[npm-downloads-href]: https://npmjs.com/package/nuxt-notion
+[npm-downloads-src]: https://img.shields.io/npm/dm/nuxt-notion-cms.svg?style=flat&colorA=020420&colorB=00DC82
+[npm-downloads-href]: https://npmjs.com/package/nuxt-notion-cms
 
-[license-src]: https://img.shields.io/npm/l/nuxt-notion.svg?style=flat&colorA=020420&colorB=00DC82
-[license-href]: https://npmjs.com/package/nuxt-notion
+[license-src]: https://img.shields.io/npm/l/nuxt-notion-cms.svg?style=flat&colorA=020420&colorB=00DC82
+[license-href]: https://npmjs.com/package/nuxt-notion-cms
 
 [nuxt-src]: https://img.shields.io/badge/Nuxt-020420?logo=nuxt.js
 [nuxt-href]: https://nuxt.com

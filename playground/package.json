@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "nuxt-notion-playground",
+  "name": "nuxt-notion-cms-playground",
   "type": "module",
   "scripts": {
     "dev": "nuxi dev",

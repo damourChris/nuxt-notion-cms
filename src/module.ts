@@ -5,8 +5,8 @@ export interface ModuleOptions {}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'nuxt-notion',
-    configKey: 'myModule',
+    name: 'nuxt-notion-cms',
+    configKey: 'notionCMS',
   },
   // Default configuration options of the Nuxt module
   defaults: {},
