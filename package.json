@@ -25,12 +25,16 @@
     "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
     "lint": "eslint .",
     "test": "vitest run",
-    "test:watch": "vitest watch"
+    "test:watch": "vitest watch",
+    "prepare": "husky",
+    "commitlint": "commitlint --edit"
   },
   "dependencies": {
     "@nuxt/kit": "^3.11.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.2.2",
+    "@commitlint/config-conventional": "^19.2.2",
     "@nuxt/devtools": "^1.1.5",
     "@nuxt/eslint-config": "^0.3.6",
     "@nuxt/module-builder": "^0.5.5",
@@ -39,6 +43,7 @@
     "@types/node": "^20.12.7",
     "changelogen": "^0.5.5",
     "eslint": "^9.0.0",
+    "husky": "^9.0.11",
     "nuxt": "^3.11.2",
     "vitest": "^1.4.0"
   }
