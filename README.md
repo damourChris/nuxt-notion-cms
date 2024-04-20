@@ -5,18 +5,15 @@
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-Connect you Nuxt.js app with Notion as a CMS.
+Connect your Nuxt.js app with the Notion API.
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
-- [🏀 Online playground](https://stackblitz.com/github/damourChris/nuxt-notion-cms?file=playground%2Fapp.vue)
+- [🏀 &nbsp;Online playground](https://stackblitz.com/github/damourChris/nuxt-notion-cms?file=playground%2Fapp.vue)
 <!-- - [📖 &nbsp;Documentation](https://example.com) -->
 
 ## Features
 
-<!-- Highlight some of the features your module provide here -->
-- ⛰ &nbsp;Foo
-- 🚠 &nbsp;Bar
-- 🌲 &nbsp;Baz
+- ⛰ &nbsp; Integrate directly with the Notion API
 
 ## Quick Setup
 
@@ -26,8 +23,7 @@ Install the module to your Nuxt application with one command:
 npx nuxi module add nuxt-notion-cms
 ```
 
-That's it! You can now use Nuxt Notion as your CMS in your Nuxt app ✨
-
+That's it! You can now use the Notion API in your Nuxt app ✨
 
 ## Contribution
 
