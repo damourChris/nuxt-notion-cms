@@ -1,19 +1,29 @@
+import type { ClientOptions } from '@notionhq/client/build/src/Client.d.ts'
 import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
+import defu from 'defu'
 
-// Module options TypeScript interface definition
-export interface ModuleOptions {}
+export interface ModuleOptions extends ClientOptions {
+  db?: string
+}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'nuxt-notion-cms',
-    configKey: 'notionCMS',
+    configKey: 'notion',
   },
+
   // Default configuration options of the Nuxt module
-  defaults: {},
-  setup(_options, _nuxt) {
+  defaults: {
+    auth: process.env.NOTION_API_KEY,
+    db: process.env.NOTION_DATABASE_ID,
+
+  },
+  async setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
+    // Private runtime config
+    nuxt.options.runtimeConfig.notion = defu(nuxt.options.runtimeConfig.notion, options)
+
     addPlugin(resolver.resolve('./runtime/plugin'))
   },
 })
