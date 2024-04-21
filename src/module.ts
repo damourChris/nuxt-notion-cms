@@ -19,11 +19,12 @@ export default defineNuxtModule<ModuleOptions>({
 
   },
   async setup(options, nuxt) {
-    const resolver = createResolver(import.meta.url)
+    const { resolve } = createResolver(import.meta.url)
+    const runtimeDir = resolve('./runtime')
 
     // Private runtime config
     nuxt.options.runtimeConfig.notion = defu(nuxt.options.runtimeConfig.notion, options)
 
-    addPlugin(resolver.resolve('./runtime/plugin'))
+    addPlugin(resolve(runtimeDir, 'plugin', 'client'))
   },
 })
