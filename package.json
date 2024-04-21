@@ -12,9 +12,6 @@
       "require": "./dist/module.cjs"
     }
   },
-  "engines": {
-    "node": ">=20.8.1"
-  },
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
   "files": [
@@ -33,6 +30,7 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.15",
     "@nuxt/kit": "^3.11.2"
   },
   "devDependencies": {
@@ -50,5 +48,8 @@
     "nuxt": "^3.11.2",
     "vitest": "^1.4.0"
   },
-  "packageManager": "pnpm@9.0.4+sha256.caa915eaae9d9aefccf50ee8aeda25a2f8684d8f9d5c6e367eaf176d97c1f89e"
+  "packageManager": "pnpm@9.0.4+sha256.caa915eaae9d9aefccf50ee8aeda25a2f8684d8f9d5c6e367eaf176d97c1f89e",
+  "engines": {
+    "node": ">=20.8.1"
+  }
 }
