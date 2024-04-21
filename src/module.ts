@@ -25,6 +25,6 @@ export default defineNuxtModule<ModuleOptions>({
     // Private runtime config
     nuxt.options.runtimeConfig.notion = defu(nuxt.options.runtimeConfig.notion, options)
 
-    addPlugin(resolve(runtimeDir, 'plugin', 'client'))
+    addPlugin(resolve(runtimeDir, 'plugins', 'client'))
   },
 })
