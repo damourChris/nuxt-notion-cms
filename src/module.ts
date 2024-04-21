@@ -1,5 +1,5 @@
 import type { ClientOptions } from '@notionhq/client/build/src/Client.d.ts'
-import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver, addTemplate } from '@nuxt/kit'
 import defu from 'defu'
 
 export interface ModuleOptions extends ClientOptions {
@@ -26,5 +26,31 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.runtimeConfig.notion = defu(nuxt.options.runtimeConfig.notion, options)
 
     addPlugin(resolve(runtimeDir, 'plugins', 'client'))
+
+    nuxt.hook('nitro:config', (nitroConfig) => {
+      nitroConfig.alias = nitroConfig.alias || {}
+
+      // Inline module runtime in Nitro bundle
+      nitroConfig.externals = defu(typeof nitroConfig.externals === 'object' ? nitroConfig.externals : {}, {
+        inline: [resolve('./runtime')],
+      })
+      nitroConfig.alias['#server/utils'] = resolve(runtimeDir, 'server', 'utils')
+    })
+
+    addTemplate({
+      filename: 'types/server-utils.d.ts',
+      getContents: () =>
+        [
+          'declare module \'#server/utils\' {',
+          `  const getNotionClient: typeof import('${resolve('./runtime/server/utils')}').getNotionClient`,
+          `  const handleNotionError: typeof import('${resolve(
+            './runtime/server/utils',
+          )}').handleNotionError`,
+        ].join('\n'),
+    })
+
+    nuxt.hook('prepare:types', (options) => {
+      options.references.push({ path: resolve(nuxt.options.buildDir, 'types/server-utils.d.ts') })
+    })
   },
 })
