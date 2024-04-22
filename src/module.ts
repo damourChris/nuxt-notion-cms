@@ -67,5 +67,18 @@ export default defineNuxtModule<ModuleOptions>({
       route: `${blockRoute}/children`,
       handler: resolve(blocksDir, '[id]', 'children.patch.ts'),
     })
+
+    // Page paths
+    const pagesRoute = '/api/notion/pages/:id'
+    const pagesDir = resolve(apiDir, 'pages')
+
+    addServerHandler({
+      route: `${pagesRoute}`,
+      handler: resolve(pagesDir, '[id].ts'),
+    })
+    addServerHandler({
+      route: '/api/notion/pages/:page_id/properties/:property_id',
+      handler: resolve(pagesDir, '[page_id]', 'properties', '[property_id].get'),
+    })
   },
 })
