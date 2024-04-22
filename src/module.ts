@@ -80,5 +80,18 @@ export default defineNuxtModule<ModuleOptions>({
       route: '/api/notion/pages/:page_id/properties/:property_id',
       handler: resolve(pagesDir, '[page_id]', 'properties', '[property_id].get'),
     })
+
+    // Users paths
+    const usersRoute = '/api/notion/users'
+    const usersDir = resolve(apiDir, 'users')
+
+    addServerHandler({
+      route: usersRoute,
+      handler: resolve(usersDir, 'users.get'),
+    })
+    addServerHandler({
+      route: `${usersRoute}/:id`,
+      handler: resolve(usersDir, '[id].get.ts'),
+    })
   },
 })
