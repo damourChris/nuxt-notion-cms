@@ -1,5 +1,5 @@
 import type { ClientOptions } from '@notionhq/client/build/src/Client.d.ts'
-import { defineNuxtModule, addPlugin, createResolver, addTemplate } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver, addTemplate, addServerHandler } from '@nuxt/kit'
 import defu from 'defu'
 
 export interface ModuleOptions extends ClientOptions {
@@ -51,6 +51,21 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.hook('prepare:types', (options) => {
       options.references.push({ path: resolve(nuxt.options.buildDir, 'types/server-utils.d.ts') })
+    })
+
+    const apiDir = resolve(runtimeDir, 'server', 'api', 'notion')
+
+    // Blocks paths
+    const blockRoute = '/api/notion/blocks/:id'
+    const blocksDir = resolve(apiDir, 'blocks')
+
+    addServerHandler({
+      route: `${blockRoute}`,
+      handler: resolve(blocksDir, '[id].ts'),
+    })
+    addServerHandler({
+      route: `${blockRoute}/children`,
+      handler: resolve(blocksDir, '[id]', 'children.patch.ts'),
     })
   },
 })
