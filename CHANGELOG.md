@@ -1,6 +1,33 @@
 # Changelog
 
 
+## v0.1.0
+
+[compare changes](https://github.com/damourChris/nuxt-notion-cms/compare/v0.0.2...v0.1.0)
+
+### 🚀 Enhancements
+
+- **server:** Add getNotionClient() ([11d72e0](https://github.com/damourChris/nuxt-notion-cms/commit/11d72e0))
+- **server:** Add notion error handler ([ee6ba2a](https://github.com/damourChris/nuxt-notion-cms/commit/ee6ba2a))
+- **server:** Add exports for utils functions ([6939b9f](https://github.com/damourChris/nuxt-notion-cms/commit/6939b9f))
+- **server:** Inline module runtime and types ([4c7d2e4](https://github.com/damourChris/nuxt-notion-cms/commit/4c7d2e4))
+- **api:** Add blocks endpoints ([0622793](https://github.com/damourChris/nuxt-notion-cms/commit/0622793))
+- **api:** Add pages endpoints ([44e3006](https://github.com/damourChris/nuxt-notion-cms/commit/44e3006))
+- **api:** Add user endpoints ([103ab87](https://github.com/damourChris/nuxt-notion-cms/commit/103ab87))
+- **server:** Add search end points ([16aebf2](https://github.com/damourChris/nuxt-notion-cms/commit/16aebf2))
+- **api:** Add database endpoints ([0b05fa5](https://github.com/damourChris/nuxt-notion-cms/commit/0b05fa5))
+
+### 🏡 Chore
+
+- Add @notionhq/client as dependency ([6a6dcf0](https://github.com/damourChris/nuxt-notion-cms/commit/6a6dcf0))
+- Add defu as dependency ([35c8d2e](https://github.com/damourChris/nuxt-notion-cms/commit/35c8d2e))
+- **release:** V0.0.2 ([fe03b87](https://github.com/damourChris/nuxt-notion-cms/commit/fe03b87))
+- Remove extreaneous semi ([21d084c](https://github.com/damourChris/nuxt-notion-cms/commit/21d084c))
+
+### ❤️ Contributors
+
+- Christopher Damour ([@damourChris](http://github.com/damourChris))
+
 ## v0.0.2
 
 [compare changes](https://github.com/damourChris/nuxt-notion-cms/compare/v0.0.1...v0.0.2)
