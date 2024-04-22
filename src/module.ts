@@ -1,5 +1,5 @@
 import type { ClientOptions } from '@notionhq/client/build/src/Client.d.ts'
-import { defineNuxtModule, addPlugin, createResolver, addTemplate, addServerHandler } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver, addTemplate, addServerHandler, addImportsDir } from '@nuxt/kit'
 import defu from 'defu'
 
 export interface ModuleOptions extends ClientOptions {
@@ -24,6 +24,8 @@ export default defineNuxtModule<ModuleOptions>({
 
     // Private runtime config
     nuxt.options.runtimeConfig.notion = defu(nuxt.options.runtimeConfig.notion, options)
+
+    addImportsDir(resolve(runtimeDir, 'composables'))
 
     addPlugin(resolve(runtimeDir, 'plugins', 'client'))
 
