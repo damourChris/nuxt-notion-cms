@@ -93,5 +93,14 @@ export default defineNuxtModule<ModuleOptions>({
       route: `${usersRoute}/:id`,
       handler: resolve(usersDir, '[id].get.ts'),
     })
+
+    // Search paths
+    const searchRoute = '/api/notion/search'
+    const searchDir = resolve(apiDir, 'search')
+
+    addServerHandler({
+      route: searchRoute,
+      handler: resolve(searchDir, 'search.post.ts'),
+    })
   },
 })
