@@ -102,5 +102,22 @@ export default defineNuxtModule<ModuleOptions>({
       route: searchRoute,
       handler: resolve(searchDir, 'search.post.ts'),
     })
+
+    // Databases paths
+    const databasesRoute = '/api/notion/databases/:id'
+    const databasesDir = resolve(apiDir, 'databases')
+
+    addServerHandler({
+      route: databasesRoute,
+      handler: resolve(databasesDir, '[id].get.ts'),
+    })
+    addServerHandler({
+      route: databasesRoute,
+      handler: resolve(databasesDir, '[id].patch.ts'),
+    })
+    addServerHandler({
+      route: `${databasesRoute}/query`,
+      handler: resolve(databasesDir, '[id]', 'query.post.ts'),
+    })
   },
 })
