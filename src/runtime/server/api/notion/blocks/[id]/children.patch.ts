@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
 
   try {
     const client = getNotionClient()
-    const block = await client.blocks.update({
+    const block = await client.blocks.children.append({
       block_id: id,
       ...body,
     })
