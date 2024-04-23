@@ -61,11 +61,11 @@ export default defineNuxtModule<ModuleOptions>({
 
     addServerHandler({
       route: `${blockRoute}`,
-      handler: resolve(blocksDir, '[id].ts'),
+      handler: resolve(blocksDir, '[id]'),
     })
     addServerHandler({
       route: `${blockRoute}/children`,
-      handler: resolve(blocksDir, '[id]', 'children.patch.ts'),
+      handler: resolve(blocksDir, '[id]', 'children.patch'),
     })
 
     // Page paths
@@ -74,7 +74,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     addServerHandler({
       route: `${pagesRoute}`,
-      handler: resolve(pagesDir, '[id].ts'),
+      handler: resolve(pagesDir, '[id]'),
     })
     addServerHandler({
       route: '/api/notion/pages/:page_id/properties/:property_id',
@@ -91,7 +91,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
     addServerHandler({
       route: `${usersRoute}/:id`,
-      handler: resolve(usersDir, '[id].get.ts'),
+      handler: resolve(usersDir, '[id].get'),
     })
 
     // Search paths
@@ -100,7 +100,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     addServerHandler({
       route: searchRoute,
-      handler: resolve(searchDir, 'search.post.ts'),
+      handler: resolve(searchDir, 'search.post'),
     })
 
     // Databases paths
@@ -109,15 +109,15 @@ export default defineNuxtModule<ModuleOptions>({
 
     addServerHandler({
       route: databasesRoute,
-      handler: resolve(databasesDir, '[id].get.ts'),
+      handler: resolve(databasesDir, '[id].get'),
     })
     addServerHandler({
       route: databasesRoute,
-      handler: resolve(databasesDir, '[id].patch.ts'),
+      handler: resolve(databasesDir, '[id].patch'),
     })
     addServerHandler({
       route: `${databasesRoute}/query`,
-      handler: resolve(databasesDir, '[id]', 'query.post.ts'),
+      handler: resolve(databasesDir, '[id]', 'query.post'),
     })
   },
 })
