@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.1.1
+
+[compare changes](https://github.com/damourChris/nuxt-notion-cms/compare/v0.1.0...v0.1.1)
+
+### 🩹 Fixes
+
+- **api:** Fix wrong method name ([43e6f5e](https://github.com/damourChris/nuxt-notion-cms/commit/43e6f5e))
+- **server:** Remove .ts extension ([29030cb](https://github.com/damourChris/nuxt-notion-cms/commit/29030cb))
+
+### ❤️ Contributors
+
+- Christopher Damour ([@damourChris](http://github.com/damourChris))
+
 ## v0.1.0
 
 [compare changes](https://github.com/damourChris/nuxt-notion-cms/compare/v0.0.2...v0.1.0)
