@@ -4,6 +4,7 @@ import defu from 'defu'
 
 export interface ModuleOptions extends ClientOptions {
   db?: string
+  apiBase: string
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -16,7 +17,7 @@ export default defineNuxtModule<ModuleOptions>({
   defaults: {
     auth: process.env.NOTION_API_KEY,
     db: process.env.NOTION_DATABASE_ID,
-
+    apiBase: '/api/notion',
   },
   async setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
@@ -56,7 +57,7 @@ export default defineNuxtModule<ModuleOptions>({
     const apiDir = resolve(runtimeDir, 'server', 'api', 'notion')
 
     // Blocks paths
-    const blockRoute = '/api/notion/blocks/:id'
+    const blockRoute = `${options.apiBase}/blocks/:id`
     const blocksDir = resolve(apiDir, 'blocks')
 
     addServerHandler({
@@ -81,7 +82,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // Page paths
-    const pagesRoute = '/api/notion/pages/:id'
+    const pagesRoute = `${options.apiBase}/pages/:id`
     const pagesDir = resolve(apiDir, 'pages')
 
     addServerHandler({
@@ -93,12 +94,12 @@ export default defineNuxtModule<ModuleOptions>({
       handler: resolve(pagesDir, '[id].patch'),
     })
     addServerHandler({
-      route: '/api/notion/pages/:page_id/properties/:property_id',
+      route: `${pagesRoute}/:page_id/properties/:property_id`,
       handler: resolve(pagesDir, '[page_id]', 'properties', '[property_id].get'),
     })
 
     // Users paths
-    const usersRoute = '/api/notion/users'
+    const usersRoute = `${options.apiBase}/users`
     const usersDir = resolve(apiDir, 'users')
 
     addServerHandler({
@@ -111,7 +112,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // Search paths
-    const searchRoute = '/api/notion/search'
+    const searchRoute = `${options.apiBase}/search`
     const searchDir = resolve(apiDir, 'search')
 
     addServerHandler({
@@ -120,7 +121,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // Databases paths
-    const databasesRoute = '/api/notion/databases/:id'
+    const databasesRoute = `${options.apiBase}/databases/:id`
     const databasesDir = resolve(apiDir, 'databases')
 
     addServerHandler({
