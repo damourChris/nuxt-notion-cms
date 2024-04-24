@@ -7,24 +7,14 @@ export default defineEventHandler(async (event) => {
 
   const { id } = getRouterParams(event)
 
-  const method = event.method
-
   try {
     const client = getNotionClient()
-    switch (method) {
-      case 'GET':
-        return client.pages.retrieve({ page_id: id })
-      case 'PATCH':{
-        const body = await readBody(event)
-        if (body.archived) {
-          return client.pages.update({ page_id: id, archived: true })
-        }
-        else {
-          return client.pages.update({ page_id: id, properties: body.properties })
-        }
-      }
-      default:
-        return { statusCode: 405, message: 'Method Not Allowed' }
+    const body = await readBody(event)
+    if (body.archived) {
+      return client.pages.update({ page_id: id, archived: true })
+    }
+    else {
+      return client.pages.update({ page_id: id, properties: body.properties })
     }
   }
   catch (error) {
