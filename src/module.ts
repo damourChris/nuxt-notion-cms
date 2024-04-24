@@ -61,7 +61,15 @@ export default defineNuxtModule<ModuleOptions>({
 
     addServerHandler({
       route: `${blockRoute}`,
-      handler: resolve(blocksDir, '[id]'),
+      handler: resolve(blocksDir, '[id].get'),
+    })
+    addServerHandler({
+      route: `${blockRoute}`,
+      handler: resolve(blocksDir, '[id].patch'),
+    })
+    addServerHandler({
+      route: `${blockRoute}`,
+      handler: resolve(blocksDir, '[id].delete'),
     })
     addServerHandler({
       route: `${blockRoute}/children`,
@@ -78,7 +86,11 @@ export default defineNuxtModule<ModuleOptions>({
 
     addServerHandler({
       route: `${pagesRoute}`,
-      handler: resolve(pagesDir, '[id]'),
+      handler: resolve(pagesDir, '[id].get'),
+    })
+    addServerHandler({
+      route: `${pagesRoute}`,
+      handler: resolve(pagesDir, '[id].patch'),
     })
     addServerHandler({
       route: '/api/notion/pages/:page_id/properties/:property_id',
