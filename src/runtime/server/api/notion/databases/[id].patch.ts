@@ -16,7 +16,7 @@ export default defineEventHandler(async (event) => {
   }
   catch (error) {
     if (isNotionClientError(error)) {
-      handleNotionError(error)
+      return handleNotionError(error)
     }
     else {
       return {
