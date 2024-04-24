@@ -65,6 +65,10 @@ export default defineNuxtModule<ModuleOptions>({
     })
     addServerHandler({
       route: `${blockRoute}/children`,
+      handler: resolve(blocksDir, '[id]', 'children.get'),
+    })
+    addServerHandler({
+      route: `${blockRoute}/children`,
       handler: resolve(blocksDir, '[id]', 'children.patch'),
     })
 
