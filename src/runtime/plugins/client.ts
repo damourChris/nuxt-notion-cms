@@ -1,12 +1,12 @@
 import { Client } from '@notionhq/client'
 import type { Ref } from 'vue'
-import { defineNuxtPlugin, useAsyncData, useRuntimeConfig } from '#app'
+import { defineNuxtPlugin, useAsyncData, useRuntimeConfig } from '#imports'
 
 export default defineNuxtPlugin({
   name: 'nuxt-notion-cms',
   enforce: 'pre',
-  async setup() {
-    const config = useRuntimeConfig().notion
+  setup() {
+    const config = useRuntimeConfig().public.notion
 
     const notionFetch = $fetch.create({
       baseURL: config.apiBase,

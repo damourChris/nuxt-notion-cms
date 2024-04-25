@@ -23,6 +23,11 @@ export default defineNuxtModule<ModuleOptions>({
     const { resolve } = createResolver(import.meta.url)
     const runtimeDir = resolve('./runtime')
 
+    // Public runtime config
+    nuxt.options.runtimeConfig.public.notion = defu(nuxt.options.runtimeConfig.public.notion, {
+      apiBase: options.apiBase,
+    })
+
     // Private runtime config
     nuxt.options.runtimeConfig.notion = defu(nuxt.options.runtimeConfig.notion, options)
 
