@@ -60,9 +60,10 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     const apiDir = resolve(runtimeDir, 'server', 'api', 'notion')
+    const apiBase = options.apiBase
 
     // Blocks paths
-    const blockRoute = `${options.apiBase}/blocks/:id`
+    const blockRoute = `${apiBase}/blocks/:id`
     const blocksDir = resolve(apiDir, 'blocks')
 
     addServerHandler({
@@ -87,7 +88,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // Page paths
-    const pagesRoute = `${options.apiBase}/pages/:id`
+    const pagesRoute = `${apiBase}/pages/:id`
     const pagesDir = resolve(apiDir, 'pages')
 
     addServerHandler({
@@ -104,7 +105,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // Users paths
-    const usersRoute = `${options.apiBase}/users`
+    const usersRoute = `${apiBase}/users`
     const usersDir = resolve(apiDir, 'users')
 
     addServerHandler({
@@ -117,7 +118,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // Search paths
-    const searchRoute = `${options.apiBase}/search`
+    const searchRoute = `${apiBase}/search`
     const searchDir = resolve(apiDir, 'search')
 
     addServerHandler({
@@ -126,7 +127,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // Databases paths
-    const databasesRoute = `${options.apiBase}/databases/:id`
+    const databasesRoute = `${apiBase}/databases/:id`
     const databasesDir = resolve(apiDir, 'databases')
 
     addServerHandler({
