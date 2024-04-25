@@ -40,6 +40,8 @@
     "prepack": "nuxt-module-build build",
     "prepare": "husky",
     "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "release:minor": "npm run lint && npm run test && npm run prepack && changelogen --release --minor && npm publish && git push --follow-tags",
+    "release:major": "npm run lint && npm run test && npm run prepack && changelogen --release --major && npm publish && git push --follow-tags",
     "test": "vitest run",
     "test:watch": "vitest watch"
   },
