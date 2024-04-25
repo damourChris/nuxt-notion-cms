@@ -1,6 +1,36 @@
 # Changelog
 
 
+## v0.1.2
+
+[compare changes](https://github.com/damourChris/nuxt-notion-cms/compare/v0.1.1...v0.1.2)
+
+### 🚀 Enhancements
+
+- **api:** Add GET method for block children ([a08bd6a](https://github.com/damourChris/nuxt-notion-cms/commit/a08bd6a))
+- **config:** Add apiBase config option ([5c6eecb](https://github.com/damourChris/nuxt-notion-cms/commit/5c6eecb))
+- **plugin:** Add custom fetch for client ([eacd302](https://github.com/damourChris/nuxt-notion-cms/commit/eacd302))
+- Add PublicRuntimeConfig type ([8da36e4](https://github.com/damourChris/nuxt-notion-cms/commit/8da36e4))
+
+### 🩹 Fixes
+
+- **api:** Add missing return on notion error ([630fbae](https://github.com/damourChris/nuxt-notion-cms/commit/630fbae))
+- **plugin:** Use public runtime for config loading ([7d62434](https://github.com/damourChris/nuxt-notion-cms/commit/7d62434))
+
+### 💅 Refactors
+
+- **api:** Separate all method in distinc files ([a0b65bf](https://github.com/damourChris/nuxt-notion-cms/commit/a0b65bf))
+- Define base url for each api routes ([ee5161a](https://github.com/damourChris/nuxt-notion-cms/commit/ee5161a))
+
+### 🏡 Chore
+
+- **release:** V0.1.1 ([b102768](https://github.com/damourChris/nuxt-notion-cms/commit/b102768))
+- Add package metadata ([f2baab8](https://github.com/damourChris/nuxt-notion-cms/commit/f2baab8))
+
+### ❤️ Contributors
+
+- Christopher Damour ([@damourChris](http://github.com/damourChris))
+
 ## v0.1.1
 
 [compare changes](https://github.com/damourChris/nuxt-notion-cms/compare/v0.1.0...v0.1.1)
