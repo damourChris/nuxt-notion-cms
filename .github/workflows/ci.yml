@@ -38,6 +38,9 @@ jobs:
                 ${{ runner.os }}-pnpm-store-
       - name: Install dependencies
         run: pnpm install
+      
+      - name: Prepare nuxt environment
+        run: pnpm dev:prepare
 
       - name: Run tests
         run: pnpm test
