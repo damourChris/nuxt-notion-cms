@@ -45,6 +45,7 @@ jobs:
       - name: Run tests
         run: pnpm test
   coverage:
+    runs-on: ubuntu-latest
     steps:
       - name: Run coverage test
         run: pnpm test:coverage
