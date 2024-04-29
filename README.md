@@ -4,6 +4,7 @@
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
+[![codecov][codecov]][codecov]
 
 Connect your Nuxt.js app with the Notion API.
 
@@ -69,3 +70,5 @@ That's it! You can now use the Notion API in your Nuxt app ✨
 
 [nuxt-src]: https://img.shields.io/badge/Nuxt-020420?logo=nuxt.js
 [nuxt-href]: https://nuxt.com
+
+[codecov]: https://codecov.io/gh/damourChris/nuxt-notion-cms/graph/badge.svg?token=IM0205JDK6)](https://codecov.io/gh/damourChris/nuxt-notion-cms
